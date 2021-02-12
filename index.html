@@ -181,6 +181,10 @@
         <p>Try to see how it work</p>
         <a style="width:fit-content;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="demo1">Demo 1</a>
         <a style="width:fit-content;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="demo2">Demo 2</a>
+        <div style="text-align: center;">
+            <h3>How it work</h3>
+            <iframe width="90%" src="https://www.youtube.com/embed/eFqucYWIZpY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
         <p style="text-align: center;">created by <b>Nguyen Anh Duc - michioXD</b></p>
     </div>
     <div id="copied" class="mdl-js-snackbar mdl-snackbar">
@@ -327,16 +331,21 @@
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             $('head').append("<style class='dark_style'>body, .main-card {    background:#121212 !important}.main-card {    color:#fff}.main-card .code, .main-card .code .pre_copy_hover {    background: #282828}</style>")
             $('#adjust').css("color", "#fff");
-        } else {
+            $('.fork_light_style').remove();
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
             $('.dark_style').remove();
             $('#adjust').css("color", "#121212");
+            $('head').append("<style class='fork_light_style'>#forkongithub a {background: #fff; color:#000}");
         }
         $('.adjust').click(function() {
             if ($(".dark_style").length) {
                 $('.dark_style').remove();
+                $('head').append("<style class='fork_light_style'>#forkongithub a {background: #fff; color:#000}");
                 $('#adjust').css("color", "#121212");
             } else {
                 $('#adjust').css("color", "#fff");
+                $('.fork_light_style').remove();
                 $('head').append("<style class='dark_style'>body, .main-card {    background:#121212 !important}.main-card {    color:#fff}.main-card .code, .main-card .code .pre_copy_hover {    background: #282828}</style>")
             }
         });
