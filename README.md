@@ -40,9 +40,17 @@ It will look like this
       </body>
     </html>
     
+Do you want it to automatically load a page when you open the main page? Don't worry, use this
+
+      <script>
+            window.onload = sspaload("path/to/file.html);
+      </script>
+This function will automatically load a page when you open the main page
+
 ## How it work
 I use the load() function to load a page without refreshing
 
+      $(DOM_Object).load("path/to/file.html");
 When you click on the object with data-href, the sspa__boot element will be deleted and re-create a new sspa__boot element.
 
 After creating a new sspa_boot element, AJAX will load a page from the data-href path into the sspa__boot element, then the entire page will not need to be reloaded. 
