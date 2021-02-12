@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 1 - SSPA.jquery</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
+    <style>
+        * {
+            font-family: Google Sans !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- create any element with class sspa__ob, add a data-href attribute with value is your address file u want to load -->
+    <!--                                                                                          IMPORTANT                 -->
+    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent sspa__ob" href="#" data-href="load1.html">load it! (File name: Load1.html)</a>
+    <!--                                                                                          IMPORTANT                 -->
+    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent sspa__ob" href="#" data-href="load2.html">load it! (File name: Load2.html)</a>
+
+    <!-- First: Create a div element with sspa__content class, for sspa__boot-->
+    <div class="sspa__content">
+        <!-- Second: Create a div elemnt with sspa__boot class, this element will load content from a file u request-->
+        <div class="sspa__boot"></div>
+    </div>
+
+    <!-- jQuery Library (IMPORTANT)-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js' crossorigin='anonymous'></script>
+    <!-- SSPA JS (IMPORTANT)-->
+    <script src="../dist/sspa.js"></script>
+
+    <!-- Material Design Lite (Optional, Front-end Framework)-->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</body>
+
+</html>
