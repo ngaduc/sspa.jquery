@@ -336,12 +336,12 @@
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
             $('.dark_style').remove();
             $('#adjust').css("color", "#121212");
-            $('head').append("<style class='fork_light_style'>#forkongithub a::before, #forkongithub a::after{color:#000} #forkongithub a {background: #fff; color:#000}");
+            $('head').append("<style class='fork_light_style'>#forkongithub a::before, #forkongithub a::after{background:#000} #forkongithub a {background: #fff; color:#000}");
         }
         $('.adjust').click(function() {
             if ($(".dark_style").length) {
                 $('.dark_style').remove();
-                $('head').append("<style class='fork_light_style'>#forkongithub a::before, #forkongithub a::after{color:#000} #forkongithub a {background: #fff; color:#000}");
+                $('head').append("<style class='fork_light_style'>#forkongithub a::before, #forkongithub a::after{background:#000} #forkongithub a {background: #fff; color:#000}");
                 $('#adjust').css("color", "#121212");
             } else {
                 $('#adjust').css("color", "#fff");
