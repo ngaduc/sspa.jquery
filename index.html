@@ -21,7 +21,7 @@
     <div class="header-content">
         <div class="social">
             <a class="adjust">
-                <i id="adjust" class="fas fa-adjust"></i>
+                <i id="adjust" class="fas fa-adjust adjust_icon"></i>
                 <div class="mdl-tooltip" for="adjust">
                     Dark/Light
                 </div>
@@ -49,6 +49,35 @@
             <h3 style="margin: 0px;">sspa.jquery</h3>
             <p>Simple Single Page Application with AJAX jQuery<br><span style="font-size:11px">current version: v0.1</span></p>
             <a style="width:fit-content;" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="https://github.com/ngaduc/sspa.jquery/archive/main.zip">Download now</a>
+        </div>
+    </div>
+    <div class="header-scroll">
+        <h4>sspa.jquery</h4>
+        <div class="social">
+            <a class="adjust">
+                <i id="adjust" class="fas fa-adjust adjust_icon"></i>
+                <div class="mdl-tooltip" for="adjust">
+                    Dark/Light
+                </div>
+            </a>
+            <a target="_blank" href="https://twitter.com/michio_xd">
+                <i id="tw" class="fab fa-twitter"></i>
+                <div class="mdl-tooltip" for="tw">
+                    My Twitter
+                </div>
+            </a>
+            <a target="_blank" href="https://fb.com/michio.xd">
+                <i id="fb" class="fab fa-facebook"></i>
+                <div class="mdl-tooltip" for="fb">
+                    My Facebook Profile
+                </div>
+            </a>
+            <a target="_blank" href="https://github.com/ngaduc">
+                <i id="git" class="fab fa-github"></i>
+                <div class="mdl-tooltip" for="git">
+                    Fork me on Github
+                </div>
+            </a>
         </div>
     </div>
     <div class="main-card mdl-card mdl-shadow--2dp">
@@ -297,16 +326,36 @@
         }());
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             $('head').append("<style class='dark_style'>body, .main-card {    background:#121212 !important}.main-card {    color:#fff}.main-card .code, .main-card .code .pre_copy_hover {    background: #282828}</style>")
+            $('#adjust').css("color", "#fff");
         } else {
             $('.dark_style').remove();
+            $('#adjust').css("color", "#121212");
         }
         $('.adjust').click(function() {
             if ($(".dark_style").length) {
                 $('.dark_style').remove();
+                $('#adjust').css("color", "#121212");
             } else {
+                $('#adjust').css("color", "#fff");
                 $('head').append("<style class='dark_style'>body, .main-card {    background:#121212 !important}.main-card {    color:#fff}.main-card .code, .main-card .code .pre_copy_hover {    background: #282828}</style>")
             }
         });
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 310 || document.documentElement.scrollTop > 310) {
+                $('.header-scroll').css('display', 'block');
+                $('.header-scroll').css('animation', 'fade 0.3s');
+            } else {
+                $('.header-scroll').css('animation', 'fadecl 0.3s');
+                setTimeout(
+                    function() {
+                        $('.header-scroll').css('display', 'none');
+                    }, 280)
+            }
+        }
     </script>
 </body>
 
